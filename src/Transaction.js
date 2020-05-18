@@ -8,3 +8,4 @@ Transaction.prototype.credit_account = function(amount) {
     this.balance += amount
     this.credit = amount
 }
+
