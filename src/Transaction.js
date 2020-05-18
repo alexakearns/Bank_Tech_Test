@@ -9,3 +9,8 @@ Transaction.prototype.credit_account = function(amount) {
     this.credit = amount
 }
 
+Transaction.prototype.debit_account = function(current_balance, amount) {
+    this.balance = current_balance
+    this.balance -= amount
+    this.debit = amount
+}
