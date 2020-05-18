@@ -18,5 +18,5 @@ it('should increase balance when depositing funds', function() {
 it('should decrease balance when withdrawing funds', function() {
     client.deposit(25)
     client.withdraw(5)
-    expect(client.balance).toEqual(5)
+    expect(client.balance).toEqual(20)
 })
