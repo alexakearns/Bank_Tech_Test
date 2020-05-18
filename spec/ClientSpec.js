@@ -3,9 +3,9 @@ describe("Client", function() {
 })
 
 beforeEach(function() {
-    client = new Client();
+    client = new Client(100);
 });
 
 it('should return client balance', function() {
-    expect(client.balance).toEqual(0);
+    expect(client.balance).toEqual(100);
 });

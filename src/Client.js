@@ -1,3 +1,3 @@
-function Client() {
-    this.balance = 0
+function Client(amount) {
+    this.balance = amount
 }
