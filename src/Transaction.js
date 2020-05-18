@@ -3,3 +3,4 @@ function Transaction() {
     this.credit = 0
     this.debit = 0
 }
+
