@@ -44,7 +44,7 @@ date || credit || debit || balance
 ```
 As a client, 
 So I can keep track of my money,
-I would like to have an initial balance of my choice.
+I would like to have an initial balance zero.
 
 As a client,
 So I can save money in my balance,
@@ -53,6 +53,10 @@ I would like to deposit funds and my balance to reflect.
 As a client,
 So I can spend my money,
 I would like to to withdraw funds and my balance to reflect.
+
+As a client,
+So I can keep track of my spending and saving,
+I would like each transaction stored.
 
 As a client,
 So I can see how I have been storing my money,
