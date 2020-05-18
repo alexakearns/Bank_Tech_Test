@@ -4,3 +4,7 @@ function Transaction() {
     this.debit = 0
 }
 
+Transaction.prototype.credit_account = function(amount) {
+    this.balance += amount
+    this.credit = amount
+}
