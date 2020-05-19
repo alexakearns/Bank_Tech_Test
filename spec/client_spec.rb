@@ -42,7 +42,7 @@ describe Client do
     expect(subject.all_transactions).to eq [100, -25, 10]
   end
 
-  it 'adds transaction object to all transaction array' do
+  it 'adds deposit transaction object to all transaction array' do
     subject.deposit(100)
     expect(subject.all_transactions.first).to be_an_instance_of(Transaction)
   end
@@ -50,5 +50,12 @@ describe Client do
   it 'deposit funds adds transaction object with credit to all transactions' do
     subject.deposit(100)
     expect(subject.all_transactions.last.credit).to eq 100
+  end
+
+  it 'adds withdraw transaction to transaction array' do
+    subject.deposit(100)
+
+    subject.withdraw(25)
+    expect(subject.all_transactions.last.debit).to eq 25
   end
 end
