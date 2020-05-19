@@ -23,23 +23,11 @@ describe Client do
     expect(subject.all_transactions).to eq []
   end
 
-  xit 'stores deposit in all transaction list' do
-    subject.deposit(100)
-    expect(subject.all_transactions).to eq [100]
-  end
-
-  xit 'stores withdraw in all transaction list as negative' do
-    subject.deposit(100)
-
-    subject.withdraw(75)
-    expect(subject.all_transactions.last).to eq -75
-  end
-
-  xit 'stores deposits and withdrawals in all transaction list' do
+  it 'stores deposits and withdrawals in all transaction list' do
     subject.deposit(100)
     subject.withdraw(25)
     subject.deposit(10)
-    expect(subject.all_transactions).to eq [100, -25, 10]
+    expect(subject.all_transactions.last.balance).to eq 85
   end
 
   it 'adds deposit transaction object to all transaction array' do
@@ -50,12 +38,5 @@ describe Client do
   it 'deposit funds adds transaction object with credit to all transactions' do
     subject.deposit(100)
     expect(subject.all_transactions.last.credit).to eq 100
-  end
-
-  it 'adds withdraw transaction to transaction array' do
-    subject.deposit(100)
-
-    subject.withdraw(25)
-    expect(subject.all_transactions.last.debit).to eq 25
   end
 end

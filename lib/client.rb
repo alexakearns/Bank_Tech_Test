@@ -12,11 +12,23 @@ class Client
 
   def deposit(amount)
     @current_balance += amount
-    @all_transactions << Transaction.new(@current_balance, amount, nil)
+    deposit_transaction(balance: @current_balance, credit: amount)
   end
 
   def withdraw(amount)
     @current_balance -= amount
-    @all_transactions << Transaction.new(@current_balance, nil, amount)
+    withdraw_transaction(balance: @current_balance, debit: amount)
+  end
+
+  private
+
+  def deposit_transaction(balance: nil, credit: nil)
+    deposit = Transaction.new(balance: balance, credit: credit)
+    @all_transactions << deposit
+  end
+
+  def withdraw_transaction(balance: nil, debit: nil)
+    withdraw = Transaction.new(balance: balance, debit: debit)
+    @all_transactions << withdraw
   end
 end
