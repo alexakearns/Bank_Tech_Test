@@ -9,9 +9,14 @@ class Transaction
     @balance = balance
     @credit = credit
     @debit = debit
+    @date = Time.now()
   end
 
   def display
-    "#{@balance} || #{@credit} || #{@debit}"
+    "#{date} || #{@balance} || #{@credit} || #{@debit}"
+  end
+
+  def date
+    @date.strftime('%d/%m/%Y')
   end
 end
