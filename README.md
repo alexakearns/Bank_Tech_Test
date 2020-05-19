@@ -67,3 +67,14 @@ So I can when I deposited and withdrew money,
 I would like to see my transactions with a date and for them to print chronologically.
 ```
 
+```
+rspec --init  
+bundle init  
+```
+
+Gems
+```
+'rubopcop'
+'simplecov'
+'simplecov-console'
+```
