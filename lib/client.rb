@@ -1,5 +1,7 @@
-class Client 
+# frozen_string_literal: true
 
+# class for client
+class Client
   attr_reader :current_balance
 
   def initialize
