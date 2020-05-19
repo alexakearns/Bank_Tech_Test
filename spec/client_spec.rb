@@ -22,4 +22,9 @@ describe Client do
   it 'has empty all transactions list' do
     expect(subject.all_transactions).to eq []
   end
+
+  it 'stores deposit in all transaction list' do
+    subject.deposit((100))
+    expect(subject.all_transactions).to eq [100]
+  end
 end
