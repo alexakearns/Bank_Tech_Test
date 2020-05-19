@@ -23,7 +23,7 @@ describe Client do
     expect(subject.all_transactions).to eq []
   end
 
-  it 'stores deposit in all transaction list' do
+  xit 'stores deposit in all transaction list' do
     subject.deposit(100)
     expect(subject.all_transactions).to eq [100]
   end
@@ -35,7 +35,7 @@ describe Client do
     expect(subject.all_transactions.last).to eq -75
   end
 
-  it 'stores deposits and withdrawals in all transaction list' do
+  xit 'stores deposits and withdrawals in all transaction list' do
     subject.deposit(100)
     subject.withdraw(25)
     subject.deposit(10)
