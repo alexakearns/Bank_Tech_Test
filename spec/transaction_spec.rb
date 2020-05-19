@@ -25,10 +25,17 @@ describe Transaction do
   end
 
   it 'should display withdraw transaction' do
-    transaction = Transaction.new(balance:100, debit: 30)
+    transaction = Transaction.new(balance: 100, debit: 30)
     expect(transaction.display).to eq '100 ||  || 30'
   end
     
+  it 'should display date of transaction' do
+    transaction = Transaction.new(balance: 100, credit:50)
 
+    expect(transaction.display).to eq "#{the_time} || 100 || 50 || "
+  end
+end
 
+def the_time
+  Time.now.strftime('%d/%m/%Y')
 end
