@@ -11,6 +11,7 @@ class Client
 
   def deposit(amount)
     @current_balance += amount
+    @all_transactions << amount
   end
 
   def withdraw(amount)
