@@ -18,4 +18,8 @@ describe Client do
     subject.withdraw(75)
     expect(subject.current_balance).to eq 25
   end
+
+  it 'has empty all transactions list' do
+    expect(subject.all_transactions).to eq []
+  end
 end
