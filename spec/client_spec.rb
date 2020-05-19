@@ -10,4 +10,11 @@ describe Client do
     subject.deposit(100)
     expect(subject.current_balance).to eq 100
   end
+
+  it 'should withdraw funds and decrease current balance' do
+    subject.deposit(100)
+
+    subject.withdraw(75)
+    expect(subject.current_balance).to eq 25
+  end
 end
