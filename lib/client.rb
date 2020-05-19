@@ -21,8 +21,9 @@ class Client
   end
 
   def statement
+    puts'balance || credit || debit'
     @all_transactions.each do |object|
-      return object.display
+      puts object.display
     
     end
   end

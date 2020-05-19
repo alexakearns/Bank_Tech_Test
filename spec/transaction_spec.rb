@@ -21,12 +21,12 @@ describe Transaction do
 
   it 'should display deposit transaction' do
     transaction = Transaction.new(balance: 100, credit: 40)
-    expect(transaction.display).to eq 'balance: 100 | credit: 40 | debit: '
+    expect(transaction.display).to eq '100 || 40 || '
   end
 
   it 'should display withdraw transaction' do
     transaction = Transaction.new(balance:100, debit: 30)
-    expect(transaction.display).to eq 'balance: 100 | credit:  | debit: 30'
+    expect(transaction.display).to eq '100 ||  || 30'
   end
     
 

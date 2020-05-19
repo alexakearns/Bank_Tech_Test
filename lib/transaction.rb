@@ -12,6 +12,6 @@ class Transaction
   end
 
   def display
-    "balance: #{@balance} | credit: #{@credit} | debit: #{@debit}"
+    "#{@balance} || #{@credit} || #{@debit}"
   end
 end
