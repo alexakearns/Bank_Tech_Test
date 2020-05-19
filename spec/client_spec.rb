@@ -41,4 +41,9 @@ describe Client do
     subject.deposit(10)
     expect(subject.all_transactions).to eq [100, -25, 10]
   end
+
+  it 'adds transaction object to all transaction array' do
+    subject.deposit(100)
+    expect(subject.all_transactions.first).to be_an_instance_of(Transaction)
+  end
 end
