@@ -16,5 +16,6 @@ class Client
 
   def withdraw(amount)
     @current_balance -= amount
+    @all_transactions << -amount
   end
 end
