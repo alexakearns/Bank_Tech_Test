@@ -20,6 +20,13 @@ class Client
     withdraw_transaction(balance: @current_balance, debit: amount)
   end
 
+  def statement
+    @all_transactions.each do |object|
+      return object.display
+    
+    end
+  end
+
   private
 
   def deposit_transaction(balance: nil, credit: nil)

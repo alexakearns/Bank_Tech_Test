@@ -42,6 +42,6 @@ describe Client do
 
   it 'prints transaction' do
     subject.deposit(100)
-    expect(subject.statement).to eq 'balance: 100 | credit: 100 | debit: '
+    expect(subject.statement).to include 'balance: 100 | credit: 100 | debit: '
   end
 end
