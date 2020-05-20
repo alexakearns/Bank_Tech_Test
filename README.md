@@ -109,7 +109,7 @@ $ irb
 For the purpose of using the acceptance critera, I have used the dates specified.  
 If no specific date is entered, the current date will be saved with the transaction at the time it is made.
 
-<img src="/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/images/Screenshot 2020-05-20 at 17.53.52.png">
+<img src="https://github.com/alexakearns/Bank_Tech_Test_Ruby/blob/master/images/Screenshot%202020-05-20%20at%2017.53.52.png">
 
 ## Approach
 ---
