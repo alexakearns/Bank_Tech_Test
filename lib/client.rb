@@ -24,7 +24,7 @@ class Client
   end
 
   def statement
-    puts 'date || credit || debit || balance '
+    puts ' date || credit || debit || balance '
     @all_transactions.each do |object|
       puts object.display
     end
