@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
+require_relative 'printer'
 
 # class for client
 class Client
@@ -24,9 +25,9 @@ class Client
   end
 
   def statement
-    puts ' date || credit || debit || balance '
-    @all_transactions.each do |object|
-      puts object.display
-    end
+    printer = Printer.new
+    each_trans =  @all_transactions.map(&:display)
+    printer.print_statement each_trans
   end
+
 end

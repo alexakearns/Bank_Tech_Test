@@ -40,9 +40,9 @@ describe Client do
     expect(subject.all_transactions.last.credit).to eq 100.00
   end
 
-  it 'prints transaction' do
-    subject.deposit(100)
-    expect(subject.statement).to include '100.00 || 100.00 || '
+  it 'prints the transactions' do
+    subject.deposit(100, "12/02/2019")
+    expect { subject.statement }.to output(" date || credit || debit || balance \n12/02/2019 || 100.00 ||  || 100.00 \n").to_stdout
   end
 end
 
