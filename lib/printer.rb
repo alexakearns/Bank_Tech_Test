@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'client'
 
+# Printer class to print statement
 class Printer
-
   def initialize
     puts ' date || credit || debit || balance '
   end

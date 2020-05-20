@@ -26,8 +26,7 @@ class Client
 
   def statement
     printer = Printer.new
-    each_trans =  @all_transactions.map(&:display)
+    each_trans = @all_transactions.map(&:display)
     printer.print_statement each_trans
   end
-
 end

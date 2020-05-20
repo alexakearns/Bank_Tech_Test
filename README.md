@@ -65,8 +65,9 @@ I would like to be able to print out my transactions.
 As a client,
 So I can when I deposited and withdrew money,
 I would like to see my transactions with a date and for them to print chronologically.
-```
 
+```
+Set Up
 ```
 rspec --init  
 bundle init  
@@ -78,3 +79,33 @@ Gems
 'simplecov'
 'simplecov-console'
 ```
+
+### Quick Start:
+1. Clone repo  
+2. Install dependencies using: 
+```
+bundle
+```
+3. Run tests using:
+```
+rspec
+Simplecov will also run to provide coverage
+```
+4. To run linter
+```
+Rubocop
+```
+5. Run in irb
+```
+$ irb
+:001 > require './lib/client'
+:002 > client = Client.new
+:003 > client.deposit(1000)
+:004 > client.deposit(2000)
+:005 > client.withdraw(500)
+:006 > client.statement
+```
+For the purpose of using the acceptance critera, I have used the dates specified.  
+If no specific date is entered, the current date will be saved with the transaction at the time it is made.
+
+<img src="/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/images/Screenshot 2020-05-20 at 17.53.52.png">
