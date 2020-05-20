@@ -11,14 +11,16 @@ class Client
     @all_transactions = []
   end
 
-  def deposit(amount)
+  def deposit(amount, date = Time.now.strftime('%d/%m/%Y'))
     @current_balance += amount
-    deposit_transaction(balance: @current_balance, credit: amount)
+    deposit_transaction = Transaction.new(balance: @current_balance, credit: amount, date: date)
+    @all_transactions.unshift(deposit_transaction)
   end
 
-  def withdraw(amount)
+  def withdraw(amount, date = Time.now.strftime('%d/%m/%Y'))
     @current_balance -= amount
-    withdraw_transaction(balance: @current_balance, debit: amount)
+    withdraw_transaction = Transaction.new(balance: @current_balance, debit: amount, date: date)
+    @all_transactions.unshift(withdraw_transaction)
   end
 
   def statement
@@ -26,17 +28,5 @@ class Client
     @all_transactions.each do |object|
       puts object.display
     end
-  end
-
-  private
-
-  def deposit_transaction(balance: nil, credit: nil)
-    deposit = Transaction.new(balance: balance, credit: credit)
-    @all_transactions << deposit
-  end
-
-  def withdraw_transaction(balance: nil, debit: nil)
-    withdraw = Transaction.new(balance: balance, debit: debit)
-    @all_transactions << withdraw
   end
 end

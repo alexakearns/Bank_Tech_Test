@@ -24,24 +24,28 @@ describe Client do
   end
 
   it 'stores deposits and withdrawals in all transaction list' do
-    subject.deposit(100)
-    subject.withdraw(25)
-    subject.deposit(10)
-    expect(subject.all_transactions.last.balance).to eq 85
+    subject.deposit(100, the_date)
+    subject.withdraw(25, the_date)
+    subject.deposit(10, the_date)
+    expect(subject.all_transactions.first.balance).to eq 85
   end
 
   it 'adds deposit transaction object to all transaction array' do
-    subject.deposit(100)
+    subject.deposit(100, the_date)
     expect(subject.all_transactions.first).to be_an_instance_of(Transaction)
   end
 
   it 'deposit funds adds transaction object with credit to all transactions' do
-    subject.deposit(100)
-    expect(subject.all_transactions.last.credit).to eq 100
+    subject.deposit(100, date: the_date)
+    expect(subject.all_transactions.last.credit).to eq 100.00
   end
 
   xit 'prints transaction' do
     subject.deposit(100)
-    expect(subject.statement).to eq '100 || 100 || '
+    expect(subject.statement).to eq '100.00 || 100.00 || '
   end
+end
+
+def the_date
+  return Time.now.strftime('%d/%m/%Y')
 end
