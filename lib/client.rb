@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'transaction'
 
 # class for client
@@ -21,10 +22,9 @@ class Client
   end
 
   def statement
-    puts'balance || credit || debit'
+    puts 'date || credit || debit || balance '
     @all_transactions.each do |object|
       puts object.display
-    
     end
   end
 

@@ -40,7 +40,7 @@ describe Client do
     expect(subject.all_transactions.last.credit).to eq 100
   end
 
-  it 'prints transaction' do
+  xit 'prints transaction' do
     subject.deposit(100)
     expect(subject.statement).to eq '100 || 100 || '
   end

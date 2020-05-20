@@ -2,18 +2,17 @@
 
 # class for each client transction
 class Transaction
-
   attr_reader :balance, :credit, :debit
 
   def initialize(balance: nil, credit: nil, debit: nil)
     @balance = balance
     @credit = credit
     @debit = debit
-    @date = Time.now()
+    @date = Time.now
   end
 
   def display
-    "#{date} || #{@balance} || #{@credit} || #{@debit}"
+    "#{date} || #{@credit} || #{@debit} || #{@balance} "
   end
 
   def date
