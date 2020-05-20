@@ -13,14 +13,14 @@ class Client
 
   def deposit(amount, date = Time.now.strftime('%d/%m/%Y'))
     @current_balance += amount
-    deposit_transaction = Transaction.new(balance: @current_balance, credit: amount, date: date)
-    @all_transactions.unshift(deposit_transaction)
+    payin = Transaction.new(balance: @current_balance, credit: amount, date: date)
+    @all_transactions.unshift(payin)
   end
 
   def withdraw(amount, date = Time.now.strftime('%d/%m/%Y'))
     @current_balance -= amount
-    withdraw_transaction = Transaction.new(balance: @current_balance, debit: amount, date: date)
-    @all_transactions.unshift(withdraw_transaction)
+    payout = Transaction.new(balance: @current_balance, debit: amount, date: date)
+    @all_transactions.unshift(payout)
   end
 
   def statement

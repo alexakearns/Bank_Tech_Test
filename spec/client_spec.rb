@@ -40,12 +40,12 @@ describe Client do
     expect(subject.all_transactions.last.credit).to eq 100.00
   end
 
-  xit 'prints transaction' do
+  it 'prints transaction' do
     subject.deposit(100)
-    expect(subject.statement).to eq '100.00 || 100.00 || '
+    expect(subject.statement).to include '100.00 || 100.00 || '
   end
 end
 
 def the_date
-  return Time.now.strftime('%d/%m/%Y')
+  Time.now.strftime('%d/%m/%Y')
 end

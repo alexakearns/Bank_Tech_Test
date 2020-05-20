@@ -18,8 +18,6 @@ class Transaction
   private
 
   def float(money)
-    if money != nil
-      '%.2f' % money.to_f.truncate(2)
-    end
+    return '%.2f' % money.to_f.truncate(2) unless money == nil
   end
 end
