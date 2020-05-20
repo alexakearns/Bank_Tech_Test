@@ -35,8 +35,9 @@ date || credit || debit || balance
 
 | Object     | Message                                 |
 |------------|-----------------------------------------|
-| Client     | Balance, Print, Initialise with deposit |
-| Trans      | Credit, Debit, Date                     |
+| Client     | Balance, Deposit, Withdraw              |
+| Trans      | Credit, Debit, Date, Display            |
+| Printer    | Print statement
 
 
 ## User Stories
@@ -109,3 +110,11 @@ For the purpose of using the acceptance critera, I have used the dates specified
 If no specific date is entered, the current date will be saved with the transaction at the time it is made.
 
 <img src="/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/images/Screenshot 2020-05-20 at 17.53.52.png">
+
+## Approach
+---
+All direct interaction of my code is through the client as the user of this application.  
+Each time they #deposit or #withdraw fund, a new instance of Transaction is created.  
+As initiation, the updated balance, credit/debit and the date of the transaction are stored in that instance as well as being able to format how it would be displayed.  
+Each Transaction instance is stored in an array in the Client.  
+To print the statement including all Transactions, a Printer instance uses the Clients array, each Transactions display and provides a statement for the Client.
