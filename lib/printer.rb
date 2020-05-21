@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'client'
+require_relative 'customer'
 
 # Printer class to print statement
 class Printer
