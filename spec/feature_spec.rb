@@ -3,28 +3,30 @@
 require './lib/client'
 
 describe 'user can deposit and with draw funds and print statement ' do
-  it 'client deposit 1000, 2000 and withdraw 500, statement prints transactions' do
-
-    first_date = '10/01/2012'
-    second_date = '13/01/2012'
-    third_date = '14/01/2012'
+  it 'client deposit 1000, 2000 and withdraw 500, prints statement' do
+    first_date = Time.new(2012, 1, 10)
+    second_date = Time.new(2012, 1, 13)
+    third_date = Time.new(2012, 1, 14)
 
     client = Client.new
 
-    client.deposit(1000, first_date)
-    client.deposit(2000, second_date)
-    client.withdraw(500, third_date)
+    allow(Time).to receive(:now).and_return(first_date)
+    client.deposit(1000)
+
+    allow(Time).to receive(:now).and_return(second_date)
+    client.deposit(2000)
+
+    allow(Time).to receive(:now).and_return(third_date)
+    client.withdraw(500)
 
     statement_header = "date || credit || debit || balance \n"
-    transaction_1 = /14\/01\/2012 \|\|  \|\| 500.00 \|\| 2500.00 /
-    transaction_2 = /13\/01\/2012 \|\| 2000.00 \|\|  \|\| 3000.00 /
-    transaction_3 = /10\/01\/2012 \|\| 1000.00 \|\|  \|\| 1000.00 /
+    transaction1 = %r{14\/01\/2012 \|\|  \|\| 500.00 \|\| 2500.00 }
+    transaction2 = %r{13\/01\/2012 \|\| 2000.00 \|\|  \|\| 3000.00 }
+    transaction3 = %r{10\/01\/2012 \|\| 1000.00 \|\|  \|\| 1000.00 }
 
-    # expect { client.statement }.to output(" date || credit || debit || balance \n14\/01\/2012 \|\|  \|\| 500.00 \|\| 2500.00 \n13\/01\/2012 \|\| 2000.00 \|\|  \|\| 3000.00 \n10\/01\/2012 \|\| 1000.00 \|\|  \|\| 1000.00 \n").to_stdout
     expect { client.statement }.to output(/#{statement_header}/m).to_stdout
-    expect { client.statement }.to output(transaction_1).to_stdout
-    expect { client.statement }.to output(transaction_2).to_stdout
-    expect { client.statement }.to output(transaction_3).to_stdout
-  
+    expect { client.statement }.to output(transaction1).to_stdout
+    expect { client.statement }.to output(transaction2).to_stdout
+    expect { client.statement }.to output(transaction3).to_stdout
   end
 end
