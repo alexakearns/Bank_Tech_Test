@@ -46,43 +46,36 @@ date || credit || debit || balance
 ```
 As a client, 
 So I can keep track of my money,
-I would like to have an initial balance zero.
+I would like to have be able to see my current balance.
 
 As a client,
-So I can save money in my balance,
-I would like to deposit funds and my balance to reflect.
+So I can see how much money I have available,
+I would like to deposit funds and my balance to reflect this.
 
 As a client,
 So I can spend my money,
 I would like to to withdraw funds and my balance to reflect.
 
 As a client,
-So I can keep track of my spending and saving,
-I would like each transaction stored.
-
-As a client,
-So I can see how I have been storing my money,
-I would like to be able to print out my transactions.
+So I can see when I deposited or withdraw money,
+I would like to keep a history of my transactions.
 
 As a client,
 So I can when I deposited and withdrew money,
-I would like to see my transactions with a date and for them to print chronologically.
+I would like to see my transactions with a date.
+
+As a client,
+So I can see all my transactions
+I would like to be able to print out a statement.
+
+As a client,
+So I can easily see my latest transactions,
+I would like my statement to print with my latest transaction at the top.
 
 ```
-### Set Up
-```
-rspec --init  
-bundle init  
-```
 
-Gems
-```
-'rubopcop'
-'simplecov'
-'simplecov-console'
-```
 
-### Quick Start:
+## Quick Start:
 1. Clone repo  
 2. Install dependencies using: 
 ```
@@ -91,7 +84,6 @@ bundle
 3. Run tests using:
 ```
 rspec
-Simplecov will also run to provide coverage
 ```
 4. To run linter
 ```
@@ -107,10 +99,8 @@ $ irb
 :005 > client.withdraw(500)
 :006 > client.statement
 ```
-For the purpose of using the acceptance critera, I have used the dates specified.  
-If no specific date is entered, the current date will be saved with the transaction at the time it is made.
 
-<img src="/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/images/Screenshot 2020-05-20 at 17.53.52.png">
+<img src="https://github.com/alexakearns/bank_tech_test/blob/master/images/Screenshot%202020-05-20%20at%2017.53.52.png">
 
 ## Approach
 ---
