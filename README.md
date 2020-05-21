@@ -1,10 +1,12 @@
 Bank Tech Test
 ===
+---
 
-**Makers Academy Week 10 Tech Test using OOP and TDD**
+Bank tech test is a small project as part of Week 10 at Makers Academy. 
+
+The aim of this project is to produce well tested, easy to read and easy to change code that is produced through a structured process using TDD and good object orientated design.
 
 ## Specification
----
 
 ### Requirements
 
@@ -28,19 +30,18 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-## PLANNING
-----
+## Planning
 
 ### Domain Model
 
-| Object     | Message                                 |
-|------------|-----------------------------------------|
-| Client     | Balance, Deposit, Withdraw              |
-| Trans      | Credit, Debit, Date, Display            |
-| Printer    | Print statement
+| Object         | Message                          |
+|----------------|----------------------------------|
+| Client         | Balance, Deposit, Withdraw       |
+| Transaction    | Credit, Debit, Date, Display     |
+| Printer        | Print statement                  |
 
 
-## User Stories
+### User Stories
 
 ```
 As a client, 
@@ -68,7 +69,7 @@ So I can when I deposited and withdrew money,
 I would like to see my transactions with a date and for them to print chronologically.
 
 ```
-Set Up
+### Set Up
 ```
 rspec --init  
 bundle init  
