@@ -10,5 +10,4 @@ class Account
   def credit(amount)
     @current_balance += amount
   end
-
 end
