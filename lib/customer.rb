@@ -2,20 +2,23 @@
 
 require_relative 'transaction'
 require_relative 'printer'
+require_relative 'account'
 
 class Customer
-  attr_reader :current_balance, :transaction_history
+  attr_reader :account
 
   # INITIAL_BALANCE = 0
   def initialize
     # @current_balance = INITIAL_BALANCE
-    @transaction_history = []
+    # @transaction_history = []
+    @account = Account.new
   end
 
   def deposit(amount)
     # @current_balance += amount
-    payin = Transaction.new(balance: @current_balance, credit: amount)
-    @transaction_history.unshift(payin)
+    # payin = Transaction.new(balance: @current_balance, credit: amount)
+    # @transaction_history.unshift(payin)
+    return account.credit(amount)
   end
 
   def withdraw(amount)

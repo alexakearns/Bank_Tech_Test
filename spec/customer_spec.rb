@@ -24,11 +24,11 @@ describe Customer do
     expect(customer.current_balance).to eq 150
   end
 
-  it 'customer deposit adds new transaction object to history array' do
-    customer = Customer.new
-    customer.deposit(100)
-    expect(customer.transaction_history.first).to be_an_instance_of(Transaction)
-  end
+  # it 'customer deposit adds new transaction object to history array' do
+  #   customer = Customer.new
+  #   customer.deposit(100)
+  #   expect(customer.transaction_history.first).to be_an_instance_of(Transaction)
+  # end
 
   it 'each deposit or withdrawl made adds new transaction to history list' do
     customer = Customer.new
