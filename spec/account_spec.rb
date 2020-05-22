@@ -20,4 +20,10 @@ describe Account do
     account.credit(100)
     expect(account.transaction_history.first).to be_an_instance_of(Transaction)
   end
+
+  it '#debit should add new transaction object to history array' do
+    account = Account.new
+    account.debit(50)
+    expect(account.transaction_history.first).to be_an_instance_of(Transaction)
+  end
 end
