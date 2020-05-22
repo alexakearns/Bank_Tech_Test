@@ -6,20 +6,20 @@ require_relative 'printer'
 class Customer
   attr_reader :current_balance, :transaction_history
 
-  INITIAL_BALANCE = 0
+  # INITIAL_BALANCE = 0
   def initialize
-    @current_balance = INITIAL_BALANCE
+    # @current_balance = INITIAL_BALANCE
     @transaction_history = []
   end
 
   def deposit(amount)
-    @current_balance += amount
+    # @current_balance += amount
     payin = Transaction.new(balance: @current_balance, credit: amount)
     @transaction_history.unshift(payin)
   end
 
   def withdraw(amount)
-    @current_balance -= amount
+    # @current_balance -= amount
     payout = Transaction.new(balance: @current_balance, debit: amount)
     @transaction_history.unshift(payout)
   end
