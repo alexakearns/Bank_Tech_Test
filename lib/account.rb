@@ -3,6 +3,7 @@
 class Account
   attr_reader :current_balance, :transaction_history
   INITIAL_BALANCE = 0
+
   def initialize
     @current_balance = INITIAL_BALANCE
     @transaction_history = []
