@@ -2,7 +2,7 @@
 
 require_relative 'customer'
 
-# Printer class to print statement
+
 class Printer
   attr_reader :header
 

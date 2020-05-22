@@ -3,18 +3,13 @@
 require 'customer'
 
 describe Customer do
-  it 'should have an initial balance of 0' do
-    customer = Customer.new
-    expect(customer.current_balance).to eq 0
-  end
-
-  it 'should deposit funds and increase current balance' do
+  it 'should allow customer to deposit money' do
     customer = Customer.new
     customer.deposit(100)
     expect(customer.current_balance).to eq 100
   end
 
-  it 'should withdraw funds and decrease current balance' do
+  it 'should allow customer to withdraw money' do
     customer = Customer.new
     customer.deposit(100)
 
@@ -22,38 +17,43 @@ describe Customer do
     expect(customer.current_balance).to eq 25
   end
 
-  it 'has empty all transactions list' do
+  it 'customer current balance changes by amount deposited' do
     customer = Customer.new
-    expect(customer.transaction_history).to eq []
+    customer.deposit(100)
+    customer.deposit(50)
+    expect(customer.current_balance).to eq 150
   end
 
-  it 'stores deposits and withdrawals in all transaction list' do
+  it 'customer deposit adds new transaction object to history array' do
     customer = Customer.new
-    customer.deposit(100, the_date)
-    customer.withdraw(25, the_date)
-    customer.deposit(10, the_date)
-    expect(customer.transaction_history.first.balance).to eq 85
-  end
-
-  it 'adds deposit transaction object to all transaction array' do
-    customer = Customer.new
-    customer.deposit(100, the_date)
+    customer.deposit(100)
     expect(customer.transaction_history.first).to be_an_instance_of(Transaction)
   end
 
-  it 'deposit funds adds transaction object with credit to all transactions' do
+  it 'each deposit or withdrawl made adds new transaction to history list' do
     customer = Customer.new
-    customer.deposit(100, date: the_date)
-    expect(customer.transaction_history.last.credit).to eq 100.00
+    customer.deposit(100)
+    customer.deposit(200)
+    customer.withdraw(50)
+    customer.withdraw(25)
+    expect(customer.transaction_history.length).to eq 4
   end
 
-  it 'prints the transactions' do
+  xit 'deposit funds adds transaction object with credit to all transactions' do
+    customer = Customer.new
+    customer.deposit(100)
+    expect(customer.transaction_history.first.credit).to eq 100.00
+  end
+
+  xit 'withdraw funds adds transaction object with debit to all transactions' do
+    customer = Customer.new
+    customer.deposit(100)
+    expect(customer.transaction_history.first.credit).to eq 100.00
+  end
+
+  xit 'prints the transactions' do
     customer = Customer.new
     customer.deposit(100, "12/02/2019")
     expect { customer.statement }.to output(" date || credit || debit || balance \n12/02/2019 || 100.00 ||  || 100.00 \n").to_stdout
   end
-end
-
-def the_date
-  Time.now.strftime('%d/%m/%Y')
 end

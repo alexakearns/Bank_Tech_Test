@@ -1,0 +1,9 @@
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe']
+
+Layout/FirstArrayElementIndentation:
+  Exclude:
+    - 'spec/spec_helper.rb'
