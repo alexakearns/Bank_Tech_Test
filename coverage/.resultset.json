@@ -1,6 +1,39 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/spec/account_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/lib/account.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/alexakearns/Projects/Week_10/Ruby_Bank_Tech_Test/spec/customer_spec.rb": {
         "lines": [
           null,
@@ -75,6 +108,7 @@
           1,
           1,
           null,
+          1,
           1,
           6,
           6,
@@ -189,6 +223,7 @@
           1,
           null,
           1,
+          null,
           1,
           1,
           1,
@@ -232,6 +267,6 @@
         ]
       }
     },
-    "timestamp": 1590152650
+    "timestamp": 1590161008
   }
 }

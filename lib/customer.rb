@@ -6,8 +6,9 @@ require_relative 'printer'
 class Customer
   attr_reader :current_balance, :transaction_history
 
+  INITIAL_BALANCE = 0
   def initialize
-    @current_balance = 0
+    @current_balance = INITIAL_BALANCE
     @transaction_history = []
   end
 

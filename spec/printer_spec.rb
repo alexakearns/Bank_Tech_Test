@@ -3,6 +3,7 @@
 require 'printer'
 
 describe Printer do
+
   it 'prints statement with headings' do
     printer = Printer.new
     array = %w[Winner Loser]
