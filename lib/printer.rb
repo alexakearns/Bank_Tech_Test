@@ -4,11 +4,14 @@ require_relative 'customer'
 
 # Printer class to print statement
 class Printer
+  attr_reader :header
+
   def initialize
-    puts ' date || credit || debit || balance '
+    @header = 'date || credit || debit || balance '
   end
 
   def print_statement(transaction)
+    puts @header
     puts transaction.join("\n")
   end
 end

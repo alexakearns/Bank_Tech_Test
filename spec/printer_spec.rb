@@ -4,9 +4,9 @@ require 'printer'
 
 describe Printer do
   it 'prints statement with headings' do
+    printer = Printer.new
     array = ['Winner', 'Loser']
-    header = " date || credit || debit || balance \n"
-    result = "Winner\nLoser\n"
-    expect { subject.print_statement(array) }.to output(header + result).to_stdout
+    result = "\nWinner\nLoser\n"
+    expect { printer.print_statement(array) }.to output(printer.header + result).to_stdout
   end
 end

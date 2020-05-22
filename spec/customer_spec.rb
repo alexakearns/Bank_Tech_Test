@@ -24,7 +24,7 @@ describe Customer do
 
   it 'has empty all transactions list' do
     customer = Customer.new
-    expect(customer.all_transactions).to eq []
+    expect(customer.transaction_history).to eq []
   end
 
   it 'stores deposits and withdrawals in all transaction list' do
@@ -32,19 +32,19 @@ describe Customer do
     customer.deposit(100, the_date)
     customer.withdraw(25, the_date)
     customer.deposit(10, the_date)
-    expect(customer.all_transactions.first.balance).to eq 85
+    expect(customer.transaction_history.first.balance).to eq 85
   end
 
   it 'adds deposit transaction object to all transaction array' do
     customer = Customer.new
     customer.deposit(100, the_date)
-    expect(customer.all_transactions.first).to be_an_instance_of(Transaction)
+    expect(customer.transaction_history.first).to be_an_instance_of(Transaction)
   end
 
   it 'deposit funds adds transaction object with credit to all transactions' do
     customer = Customer.new
     customer.deposit(100, date: the_date)
-    expect(customer.all_transactions.last.credit).to eq 100.00
+    expect(customer.transaction_history.last.credit).to eq 100.00
   end
 
   it 'prints the transactions' do
