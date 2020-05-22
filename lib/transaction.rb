@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# class for each client transction
 class Transaction
   attr_reader :balance, :credit, :debit
 
@@ -18,6 +17,6 @@ class Transaction
   private
 
   def float(money)
-    return '%.2f' % money.to_f.truncate(2) unless money == nil
+    return '%.2f' % money.to_f.truncate(2) unless money.nil?
   end
 end
