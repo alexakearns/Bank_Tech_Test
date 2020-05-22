@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 
 class Account
-
   attr_reader :current_balance, :transaction_history
   INITIAL_BALANCE = 0
   def initialize
@@ -16,5 +16,7 @@ class Account
 
   def debit(amount)
     @current_balance -= amount
+    payout = Transaction.new(balance: @current_balance, debit: amount)
+    @transaction_history.unshift(payout)
   end
 end

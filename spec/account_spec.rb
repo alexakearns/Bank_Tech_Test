@@ -26,4 +26,13 @@ describe Account do
     account.debit(50)
     expect(account.transaction_history.first).to be_an_instance_of(Transaction)
   end
+
+  it '#credit and #debit adds multiple transactions to history' do
+    account = Account.new
+    account.credit(100)
+    account.debit(50)
+    account.debit(25)
+    account.credit(200)
+    expect(account.transaction_history.length).to eq 4
+  end
 end

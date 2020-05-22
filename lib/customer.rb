@@ -18,13 +18,14 @@ class Customer
     # @current_balance += amount
     # payin = Transaction.new(balance: @current_balance, credit: amount)
     # @transaction_history.unshift(payin)
-    return account.credit(amount)
+    account.credit(amount)
   end
 
   def withdraw(amount)
     # @current_balance -= amount
-    payout = Transaction.new(balance: @current_balance, debit: amount)
-    @transaction_history.unshift(payout)
+    # payout = Transaction.new(balance: @current_balance, debit: amount)
+    # @transaction_history.unshift(payout)
+    account.debit(amount)
   end
 
   def statement
