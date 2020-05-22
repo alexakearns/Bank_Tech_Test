@@ -14,4 +14,10 @@ describe Account do
     account.debit(25)
     expect(account.current_balance).to eq -25
   end
+
+  it '#credit should add new transaction object to history array' do
+    account = Account.new
+    account.credit(100)
+    expect(account.transaction_history.first).to be_an_instance_of(Transaction)
+  end
 end
