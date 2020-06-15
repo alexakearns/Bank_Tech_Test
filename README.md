@@ -2,7 +2,7 @@ Bank Tech Test
 ===
 ---
 
-Bank tech test is a small project as part of Week 10 at Makers Academy. 
+Bank tech test is a small project as part of Week 10 at Makers Academy. [Bank Tech Test](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
 
 The aim of this project is to produce well tested, easy to read and easy to change code that is produced through a structured process using TDD and good object orientated design.
 
