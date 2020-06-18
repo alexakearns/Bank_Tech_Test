@@ -34,11 +34,11 @@ date || credit || debit || balance
 
 ### Domain Model
 
-| Object         | Message                          |
-|----------------|----------------------------------|
-| Client         | Balance, Deposit, Withdraw       |
-| Transaction    | Credit, Debit, Date, Display     |
-| Printer        | Print statement                  |
+| Object         | Message                                  |
+|----------------|------------------------------------------|
+| Client         | Balance, Deposit, Withdraw, Statement    |
+| Transaction    | Credit, Debit, Date, Display             |
+| Printer        | Print statement                          |
 
 
 ### User Stories
