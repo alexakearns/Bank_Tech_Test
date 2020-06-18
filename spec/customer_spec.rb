@@ -39,13 +39,13 @@ describe Customer do
     expect(customer.transaction_history.length).to eq 4
   end
 
-  xit 'deposit funds adds transaction object with credit to all transactions' do
+  it 'deposit funds adds transaction object with credit to all transactions' do
     customer = Customer.new
     customer.deposit(100)
     expect(customer.transaction_history.first.credit).to eq 100.00
   end
 
-  xit 'withdraw funds adds transaction object with debit to all transactions' do
+  it 'withdraw funds adds transaction object with debit to all transactions' do
     customer = Customer.new
     customer.deposit(100)
     expect(customer.transaction_history.first.credit).to eq 100.00
@@ -54,7 +54,7 @@ describe Customer do
   # test needs reviewing when printer takes on responsibility of statement
   xit 'prints the transactions' do
     customer = Customer.new
-    customer.deposit(100, '2/02/2019')
+    customer.deposit(100, '12/02/2019')
     expect { customer.statement }.to output(" date || credit || debit || balance \n12/02/2019 || 100.00 ||  || 100.00 \n").to_stdout
   end
 end
