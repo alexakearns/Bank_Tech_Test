@@ -3,7 +3,7 @@
 require_relative 'transaction'
 require_relative 'printer'
 
-class Customer
+class Client
   attr_reader :current_balance, :transaction_history
 
   def initialize

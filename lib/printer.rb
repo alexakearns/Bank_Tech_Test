@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'customer'
+require_relative 'client'
 
 class Printer
   attr_reader :header
