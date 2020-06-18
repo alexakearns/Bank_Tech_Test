@@ -100,7 +100,7 @@ $ irb
 :006 > client.statement
 ```
 
-<img src="https://github.com/alexakearns/bank_tech_test/blob/master/images/Screenshot%202020-05-20%20at%2017.53.52.png">
+<img src="https://github.com/alexakearns/bank_tech_test/blob/master/images/Screenshot%202020-06-18%20at%2017.03.42.png">
 
 ## Approach
 ---
