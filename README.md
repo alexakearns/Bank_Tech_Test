@@ -1,10 +1,12 @@
 Bank Tech Test
 ===
+---
 
-**Makers Academy Week 10 Tech Test using OOP and TDD**
+Bank tech test is a small project as part of Week 10 at Makers Academy. 
+
+The aim of this project is to produce well tested, easy to read and easy to change code that is produced through a structured process using TDD and good object orientated design.
 
 ## Specification
----
 
 ### Requirements
 
@@ -28,60 +30,52 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-## PLANNING
-----
+## Planning
 
 ### Domain Model
 
-| Object     | Message                                 |
-|------------|-----------------------------------------|
-| Client     | Balance, Deposit, Withdraw              |
-| Trans      | Credit, Debit, Date, Display            |
-| Printer    | Print statement
+| Object         | Message                                  |
+|----------------|------------------------------------------|
+| Client         | Balance, Deposit, Withdraw, Statement    |
+| Transaction    | Credit, Debit, Date, Display             |
+| Printer        | Print statement                          |
 
 
-## User Stories
+### User Stories
 
 ```
 As a client, 
 So I can keep track of my money,
-I would like to have an initial balance zero.
+I would like to have be able to see my current balance.
 
 As a client,
-So I can save money in my balance,
-I would like to deposit funds and my balance to reflect.
+So I can see how much money I have available,
+I would like to deposit funds and my balance to reflect this.
 
 As a client,
 So I can spend my money,
 I would like to to withdraw funds and my balance to reflect.
 
 As a client,
-So I can keep track of my spending and saving,
-I would like each transaction stored.
-
-As a client,
-So I can see how I have been storing my money,
-I would like to be able to print out my transactions.
+So I can see when I deposited or withdraw money,
+I would like to keep a history of my transactions.
 
 As a client,
 So I can when I deposited and withdrew money,
-I would like to see my transactions with a date and for them to print chronologically.
+I would like to see my transactions with a date.
+
+As a client,
+So I can see all my transactions
+I would like to be able to print out a statement.
+
+As a client,
+So I can easily see my latest transactions,
+I would like my statement to print with my latest transaction at the top.
 
 ```
-Set Up
-```
-rspec --init  
-bundle init  
-```
 
-Gems
-```
-'rubopcop'
-'simplecov'
-'simplecov-console'
-```
 
-### Quick Start:
+## Quick Start:
 1. Clone repo  
 2. Install dependencies using: 
 ```
@@ -90,7 +84,6 @@ bundle
 3. Run tests using:
 ```
 rspec
-Simplecov will also run to provide coverage
 ```
 4. To run linter
 ```
@@ -106,10 +99,8 @@ $ irb
 :005 > client.withdraw(500)
 :006 > client.statement
 ```
-For the purpose of using the acceptance critera, I have used the dates specified.  
-If no specific date is entered, the current date will be saved with the transaction at the time it is made.
 
-<img src="https://github.com/alexakearns/Bank_Tech_Test_Ruby/blob/master/images/Screenshot%202020-05-20%20at%2017.53.52.png">
+<img src="https://github.com/alexakearns/bank_tech_test/blob/master/images/Screenshot%202020-05-20%20at%2017.53.52.png">
 
 ## Approach
 ---

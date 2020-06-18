@@ -3,38 +3,27 @@
 require 'transaction'
 
 describe Transaction do
-  it 'should initialise with balance properties' do
-    transaction = Transaction.new(balance: 100, credit: 50)
-    expect(transaction.balance).to eq 100
-  end
-
-  it 'should initialise with credit properties' do
-    transaction = Transaction.new(balance: 100, credit: 50)
-    expect(transaction.credit).to eq 50
-  end
-
-  it 'should initialise with debit properties' do
-    transaction = Transaction.new(balance: 100, debit: 25)
-    expect(transaction.debit).to eq 25
-  end
-
   it 'should display deposit transaction' do
+    date = Time.new(2019, 2, 5)
+    allow(Time).to receive(:now).and_return(date)
     transaction = Transaction.new(balance: 100, credit: 40)
-    expect(transaction.display).to eq "#{the_date} || 40.00 ||  || 100.00 "
+
+    expect(transaction.display).to eq '05/02/2019 || 40.00 ||  || 100.00 '
   end
 
   it 'should display withdraw transaction' do
+    date = Time.new(2019, 2, 5)
+    allow(Time).to receive(:now).and_return(date)
     transaction = Transaction.new(balance: 100, debit: 30)
-    expect(transaction.display).to eq "#{the_date} ||  || 30.00 || 100.00 "
+
+    expect(transaction.display).to eq '05/02/2019 ||  || 30.00 || 100.00 '
   end
 
   it 'should display date of transaction' do
+    date = Time.new(2019, 2, 5)
+    allow(Time).to receive(:now).and_return(date)
     transaction = Transaction.new(balance: 100, credit: 50)
 
-    expect(transaction.display).to eq "#{the_date} || 50.00 ||  || 100.00 "
+    expect(transaction.display).to eq '05/02/2019 || 50.00 ||  || 100.00 '
   end
-end
-
-def the_date
-  Time.now.strftime('%d/%m/%Y')
 end
