@@ -1,5 +1,6 @@
 function Client() {
     this.current_balance = 0
+    this.all_transaction = []
 }
 
 Client.prototype.deposit = function(amount) {
